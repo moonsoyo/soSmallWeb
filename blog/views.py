@@ -11,3 +11,14 @@ def index(request):
             'posts': posts,  # views.py 에서 데이터베이스에 쿼리를 날려서 원하는 레코드를 가져올 수 있음.
         }
     )
+
+def single_post_page(request, pk):
+    post = Post.objects.get(pk=pk)
+
+    return render(
+        request,
+        'blog/single_post_page.html',
+        {
+            'post': post,
+        }
+    )
