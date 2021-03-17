@@ -133,4 +133,5 @@ dmypy.json
 migrations/
 settings.py
 bootstrap/
+_media/
 
