@@ -2,7 +2,7 @@
 {% load static %}
 <html>
     <head>
-        <title>About me</title>
+        <title>Algorithms</title>
         <link href="{% static 'algorithms/bootstrap/bootstrap.min.css' %}" rel="stylesheet" media="screen">
         <script src="https://kit.fontawesome.com/74835a72b2.js" crossorigin="anonymous"></script>
     </head>
@@ -74,8 +74,9 @@
 
         <div class="container my-3">
             <div class="row">
-                <div class="col-md-8 col-lg-9">
+                <div class="col-md-8 col-lg-9" id="main_area">
                     <h1>Blog</h1>
+                    {% if post_list.exists %}
                     {% for p in post_list %}
                     <!-- Blog Post -->
                     <div class="card mb-4">
@@ -98,6 +99,9 @@
                         </div>
                     </div>
                     {% endfor %}
+                    {% else %}
+                        <h3>No posts yet.</h3>
+                    {% endif %}
                     <!-- Pagination -->
                     <ul class="pagination justify-content-center mb-4">
                         <li class="page-item">
